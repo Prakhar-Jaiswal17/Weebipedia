@@ -3,24 +3,12 @@ import AnimeDisplay from './AnimeDisplay'
 import Navbar from './Navbar'
 
 export default function App(){
+    const [heading,setHeading] = useState('Top Rated Anime')
     const [genre,setGenre] = useState('')
     const [genreList,setGenreList] = useState([])
     const [animeData,setAnimeData] = useState([])
 
     useEffect(()=>{
-        fetch("https://api.jikan.moe/v4/top/anime")
-        .then((res)=>{
-            if(!res.ok){
-                throw new Error('Error')
-            }
-            return res.json();
-        })
-        .then(result=>result.data)
-        .then(data=>setAnimeData(data))
-        .catch((err)=>{
-            console.log(err.message);
-        })
-
 
         fetch("https://api.jikan.moe/v4/genres/anime")
         .then((res)=>{
@@ -50,6 +38,7 @@ export default function App(){
             .catch((err)=>{
                 console.log(err.message);
             })
+            setHeading('Top Rated Anime')
             return;
         }
 
@@ -73,12 +62,13 @@ export default function App(){
         .catch((err)=>{
             console.log(err.message);
         })
-    },[genre,genreList])
+        setHeading(`Top Rated ${genre} Anime`)
+    },[genre])
 
     return (
         <>
             <Navbar handleGenre = {setGenre} />
-            <AnimeDisplay data = {animeData} />
+            <AnimeDisplay data = {animeData} heading = {heading}/>
         </>
     )
 }

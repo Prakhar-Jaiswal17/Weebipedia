@@ -18,7 +18,11 @@ export default function Navbar({handleGenre}){
                 <option value="Seinen">Seinen</option>
                 <option value="Shounen">Shounen</option>
                 <option value="Slice of life">Slice of life</option>
+                <option value="Space">Space</option>
+                <option value="Time Travel">Time Travel</option>
                 <option value="Thriller">Thriller</option>
+                <option value="Vampire">Vampire</option>
+                <option value="Video Game">Video Game</option>
             </select>
             <div>
                 <input type="search" id="search-input" placeholder="Search Anime" />

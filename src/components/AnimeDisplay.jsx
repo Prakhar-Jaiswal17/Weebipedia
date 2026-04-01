@@ -1,6 +1,6 @@
 import Card from './Card.jsx'
 
-export default function AnimeDisplay({data}){
+export default function AnimeDisplay({data,heading}){
     // console.log(data);
     // console.log(anime);
     
@@ -11,7 +11,7 @@ export default function AnimeDisplay({data}){
 
     return (
         <>
-            <h1 id='heading'>Top Rated Anime</h1>
+            <h1 id='heading'>{heading}</h1>
             <div id='cards-container'>
                 {anime.length>0? anime: <p className='loading'></p>}
             </div>
