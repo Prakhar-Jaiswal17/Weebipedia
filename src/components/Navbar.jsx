@@ -1,8 +1,14 @@
-export default function Navbar(){
+// import { useState, useEffect } from "react";
+
+export default function Navbar({handleGenre}){
+
+    // const [genre,setGenre] = useState("");
+    // const [searchText,setSearchText] = useState("");
+
     return(
         <nav>
             <h1>Weebipedia</h1>
-            <select name="Genre" id="genre-input">
+            <select name="Genre" id="genre-input" onChange={(e)=>handleGenre(e.target.value)}>
                 <option value="">Genre</option>
                 <option value="Action">Action</option>
                 <option value="Adventure">Adventure</option>

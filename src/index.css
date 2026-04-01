@@ -100,6 +100,7 @@ nav button:active{
 .cards:hover{
     /* opacity: 0.2; */
     transform: scale(1.1);
+    cursor: pointer;
 }
 .cards{
     position: relative;
@@ -160,4 +161,26 @@ nav button:active{
 
 #heading{
     margin-left: 20px;
+}
+
+
+.loading{
+    margin-top: 30vh;
+    height: 60px;
+    width: 60px;
+    border-top: 2px solid rgb(255,101,10);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
