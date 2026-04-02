@@ -10,6 +10,7 @@ body{
 nav{
     display: grid;
     /* display: flex; */
+    grid-template-columns: 200px 250px 250px 550px;
     grid-template-columns: 200px 250px 550px;
     justify-content: space-evenly;
     align-items: center;
@@ -24,6 +25,12 @@ nav{
 nav>h1{
     color: rgb(255,101,10);
 }
+
+/* #home-button{
+    background-color: transparent;
+    color: rgb(255,101,10);
+    font-size: 1rem;
+} */
 
 nav select:focus, nav input:focus{
     outline: none;
@@ -101,6 +108,7 @@ nav button:active{
     /* opacity: 0.2; */
     transform: scale(1.1);
     cursor: pointer;
+    color: rgb(27,27,26);
 }
 .cards{
     position: relative;
@@ -125,12 +133,13 @@ nav button:active{
 }
 
 
-#hover-overlay{
+#hover-effect{
+    color: white;
     border-radius: 10px;
     height: 95%;
     width: 180px;
     padding: 10px;
-    background-color: hsla(60, 2%, 10%, 0.831);
+    background-color: hsla(60, 2%, 10%, 0.822);
     position: absolute;
     top: 0;
     opacity: 0;
@@ -142,15 +151,15 @@ nav button:active{
     justify-content: space-evenly;
     align-items: center;
 }
-#hover-overlay:hover{
+#hover-effect:hover{
     opacity: 1;
 }
 
-#hover-overlay p{
+#hover-effect p{
     color: rgb(188, 187, 187);
 }
 
-#hover-overlay span{
+#hover-effect span{
     font-size: 0.9rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;

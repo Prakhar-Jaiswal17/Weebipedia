@@ -7,6 +7,7 @@ export default function App(){
     const [genre,setGenre] = useState('')
     const [genreList,setGenreList] = useState([])
     const [animeData,setAnimeData] = useState([])
+    const [search,setSearch] = useState('')
 
     useEffect(()=>{
 
@@ -25,6 +26,7 @@ export default function App(){
     },[])
 
     useEffect(()=>{
+        setAnimeData([])
         if(genre===''){
             fetch("https://api.jikan.moe/v4/top/anime")
             .then((res)=>{
@@ -65,9 +67,41 @@ export default function App(){
         setHeading(`Top Rated ${genre} Anime`)
     },[genre])
 
+    useEffect(()=>{
+        setAnimeData([])
+        if(search===''){
+            fetch("https://api.jikan.moe/v4/top/anime")
+            .then((res)=>{
+                if(!res.ok){
+                    throw new Error('Error')
+                }
+                return res.json();
+            })
+            .then(result=>result.data)
+            .then(data=>setAnimeData(data))
+            .catch((err)=>{
+                console.log(err.message);
+            })
+            setHeading('Top Rated Anime')
+            return;
+        }
+        fetch(`https://api.jikan.moe/v4/anime?q=${search.toLowerCase()}`)
+        .then((res)=>{
+            if(!res.ok){
+                throw new Error("Error")
+            }
+            return res.json()
+        })
+        .then(result=>setAnimeData(result.data))
+        .catch((err)=>{
+            console.log(err.message);
+        })
+        setHeading(`Results for "${search}"`)
+    },[search])
+
     return (
         <>
-            <Navbar handleGenre = {setGenre} />
+            <Navbar handleGenre = {setGenre} handleSearch={setSearch}/>
             <AnimeDisplay data = {animeData} heading = {heading}/>
         </>
     )

@@ -15,7 +15,7 @@ export default function Card({name, poster, score, description, episodes}){
             <span>⭐️ {score}</span>
             <p style={{textAlign:"center", marginBottom: "15px", fontWeight: "bold"}}>{name}</p>
 
-            <div id="hover-overlay">
+            <div id="hover-effect">
                 <h4>{name}</h4>
                 <p>⭐️ {score}</p>
                 <p>{episodes}</p>
