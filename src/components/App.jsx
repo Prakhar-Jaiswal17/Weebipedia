@@ -9,7 +9,7 @@ export default function App(){
     const [animeData,setAnimeData] = useState([])
     const [search,setSearch] = useState('')
 
-    //initial fetch
+    
     useEffect(()=>{
 
         fetch("https://api.jikan.moe/v4/genres/anime")
@@ -26,7 +26,7 @@ export default function App(){
         })
     },[])
 
-    //genre fetch
+  
     useEffect(()=>{
         setAnimeData([])
         if(genre===''){
@@ -69,7 +69,6 @@ export default function App(){
         setHeading(`Top Rated ${genre} Anime`)
     },[genre])
 
-    // search fetch
     
     useEffect(()=>{
         setAnimeData([])
