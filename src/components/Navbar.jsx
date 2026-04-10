@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
-import animationData from "../../icons/icons8-sun.json";
+import LightanimationData from "../../icons/icons8-sun.json";
+import DarkanimationData from "../../icons/Weather Icon - Night.json";
 
 export default function Navbar({ handleGenre, handleSearch }) {
 
@@ -19,7 +20,7 @@ export default function Navbar({ handleGenre, handleSearch }) {
         }
     }
 
-    let themeIcon = theme==='dark'?<Lottie.default animationData={animationData} loop={true} style={{ height: 40, width: 40 }} /> : <img src="../../icons/dark.png" alt="Dark" />
+    let themeIcon = theme==='dark'?<Lottie.default animationData={LightanimationData} loop={true} style={{ height: 40, width: 40 }} /> : <Lottie.default animationData={DarkanimationData} loop={true} style={{ height: 40, width: 40 }} />
 
     return (
         <nav>
