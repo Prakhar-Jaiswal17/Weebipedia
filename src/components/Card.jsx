@@ -16,7 +16,7 @@ export default function Card({name, poster, score, description, episodes}){
 
             <div id="hover-effect">
                 <h4>{name}</h4>
-                <p style={{color:"gold"}}>MAL Score : {score}</p>
+                <p id="mal-score">MAL Score : {score}</p>
                 <p>{episodes}</p>
                 <span>{description}</span>
             </div>

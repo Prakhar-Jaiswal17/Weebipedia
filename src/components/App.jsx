@@ -8,7 +8,6 @@ export default function App(){
     const [genreList,setGenreList] = useState([])
     const [animeData,setAnimeData] = useState([])
     const [search,setSearch] = useState('')
-
     
     useEffect(()=>{
 
